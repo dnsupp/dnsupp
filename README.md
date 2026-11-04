@@ -1,7 +1,12 @@
 ## Hi there 👋
 
 
-![Contribution activity](https://raw.githubusercontent.com/dnsupp/dnsupp/main/heatmap.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dnsupp/dnsupp/output/heatmap-dark.svg">
+  <img alt="My GitHub contribution heatmap" src="https://raw.githubusercontent.com/dnsupp/dnsupp/output/heatmap.svg">
+</picture>
+
+
 <!--
 **dnsupp/dnsupp** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 

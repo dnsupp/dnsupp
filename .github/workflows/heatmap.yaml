@@ -1,29 +1,31 @@
-name: Generate animated heatmap
+name: Animated contribution heatmap
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "23 3 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  generate:
+  heatmap:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: HowardZlh/github-action-shares@main
+      - uses: HowardZlh/github-action-shares@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          username: dnsupp
-          outputs: heatmap
+          source: user
+          target: dnsupp
+          window: year
+          out-dir: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit generated SVG
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Update heatmap" || exit 0
-          git push
+      - uses: crazy-max/ghaction-github-pages@v5
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

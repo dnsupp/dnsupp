@@ -1,6 +1,3 @@
-## Hi there 👋
-
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dnsupp/dnsupp/output/heatmap-dark.svg">
   <img alt="My GitHub contribution heatmap" src="https://raw.githubusercontent.com/dnsupp/dnsupp/output/heatmap.svg">
